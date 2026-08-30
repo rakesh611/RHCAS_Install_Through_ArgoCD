@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rhacs-secured-cluster
+  namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "20"
+
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/YOUR_ORG/ocp-gitops.git
+    targetRevision: main
+    path: rhacs/secured-cluster
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: stackrox
+
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
