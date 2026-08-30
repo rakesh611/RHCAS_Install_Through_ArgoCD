@@ -10,7 +10,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/YOUR_ORG/ocp-gitops.git
+    repoURL: https://github.com/rakesh611/RHCAS_Install_Through_ArgoCD.git
     targetRevision: main
     path: rhacs/secured-cluster
 
