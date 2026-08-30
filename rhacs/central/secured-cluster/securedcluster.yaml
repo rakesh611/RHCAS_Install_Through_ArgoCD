@@ -1,0 +1,31 @@
+apiVersion: platform.stackrox.io/v1alpha1
+kind: SecuredCluster
+metadata:
+  name: stackrox-secured-cluster-services
+  namespace: stackrox
+spec:
+  clusterName: lab
+
+  centralEndpoint: central.stackrox.svc:443
+
+  monitoring:
+    openshift:
+      enabled: true
+
+  network:
+    policies: Enabled
+
+  admissionControl:
+    listenOnCreates: true
+    listenOnUpdates: true
+    listenOnEvents: true
+    replicas: 1
+
+  sensor:
+    replicas: 1
+
+  perNode:
+    collector:
+      collection: CORE_BPF
+      imageFlavor: Regular
+      taintToleration: TolerateTaints
