@@ -3,6 +3,4 @@ kind: OperatorGroup
 metadata:
   name: rhacs-operator-group
   namespace: rhacs-operator
-spec:
-  targetNamespaces:
-  - rhacs-operator
+spec: {}
