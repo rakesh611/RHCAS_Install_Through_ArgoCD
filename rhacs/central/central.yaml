@@ -1,10 +1,8 @@
-```yaml
 apiVersion: platform.stackrox.io/v1alpha1
 kind: Central
 metadata:
   name: stackrox-central-services
   namespace: stackrox
-
 spec:
   egress:
     connectivityPolicy: Online
@@ -18,31 +16,24 @@ spec:
 
   central:
     nodeSelector:
-      rhacs-node: true
-
+      rhacs-node: "true"
     exposure:
       loadBalancer:
         enabled: false
         port: 443
-
       nodePort:
         enabled: false
-
       route:
         enabled: true
-
     persistence:
       persistentVolumeClaim:
         claimName: stackrox-db
         storageClassName: lvms-vg1
         size: 50Gi
-
     db:
       isEnabled: Default
-
       nodeSelector:
-        rhacs-node: true
-
+        rhacs-node: "true"
       persistence:
         persistentVolumeClaim:
           claimName: central-db
@@ -51,32 +42,25 @@ spec:
 
   scannerV4:
     scannerComponent: Enabled
-
     indexer:
       nodeSelector:
         rhacs-node: "true"
-
       scaling:
         autoScaling: Enabled
         minReplicas: 1
         maxReplicas: 1
-
     matcher:
       nodeSelector:
-        rhacs-node: true
-
+        rhacs-node: "true"
       scaling:
         autoScaling: Enabled
         minReplicas: 1
         maxReplicas: 1
-
     db:
       nodeSelector:
-        rhacs-node: true
-
+        rhacs-node: "true"
       persistence:
         persistentVolumeClaim:
           claimName: scanner-v4-db
           storageClassName: lvms-vg1
           size: 20Gi
-```
