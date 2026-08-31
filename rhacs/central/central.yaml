@@ -45,13 +45,13 @@ spec:
       scaling:
         autoScaling: Enabled
         minReplicas: 1
-        maxReplicas: 2
+        maxReplicas: 1
 
     matcher:
       scaling:
         autoScaling: Enabled
         minReplicas: 1
-        maxReplicas: 2
+        maxReplicas: 1
 
     db:
       persistence:
