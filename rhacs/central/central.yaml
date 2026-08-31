@@ -18,7 +18,7 @@ spec:
 
   central:
     nodeSelector:
-      rhacs-node: "true"
+      rhacs-node: true
 
     exposure:
       loadBalancer:
@@ -41,7 +41,7 @@ spec:
       isEnabled: Default
 
       nodeSelector:
-        rhacs-node: "true"
+        rhacs-node: true
 
       persistence:
         persistentVolumeClaim:
@@ -63,7 +63,7 @@ spec:
 
     matcher:
       nodeSelector:
-        rhacs-node: "true"
+        rhacs-node: true
 
       scaling:
         autoScaling: Enabled
@@ -72,7 +72,7 @@ spec:
 
     db:
       nodeSelector:
-        rhacs-node: "true"
+        rhacs-node: true
 
       persistence:
         persistentVolumeClaim:
