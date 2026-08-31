@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/rakesh611/RHCAS_Install_Through_ArgoCD.git
     targetRevision: main
-    path: rhacs/secured-cluster
+    path: rhacs/central/secured-cluster
 
   destination:
     server: https://kubernetes.default.svc
